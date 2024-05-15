@@ -3,6 +3,7 @@ x = 1_000_000_000
 # x = 1_111_111_101
 y = 9_999_999_999
 # y = 1_001_111_129
+# y = 1_112_111_120
 
 # словарь в котором буду сохранять количество количество вариантов
 dict_of_variants = {}
@@ -22,17 +23,18 @@ for num in range(x, y+1):
             q_odd_digit += 1
             # print(digit, 'нечетное')
 
-    flag_of_key = str(q_even_digit) + ' чет - ' + str(q_odd_digit) + ' нечет'
-    # print(flag_of_key)
+    if q_even_digit == 5:
+        flag_of_key = str(q_even_digit) + ' чет - ' + str(q_odd_digit) + ' нечет'
+        # print(flag_of_key)
 
-    # заполнение словаря отделений
-    if dict_of_variants.get(flag_of_key) is None:
-        dict_of_variants[flag_of_key] = 1
-    else:
-        dict_of_variants[flag_of_key] = dict_of_variants[flag_of_key] + 1
+        # заполнение словаря отделений
+        if dict_of_variants.get(flag_of_key) is None:
+            dict_of_variants[flag_of_key] = 1
+        else:
+            dict_of_variants[flag_of_key] = dict_of_variants[flag_of_key] + 1
 
-    # print(q_even_digit, 'четных,', q_odd_digit, 'нечетных')
-    # print()
+        # print(q_even_digit, 'четных,', q_odd_digit, 'нечетных')
+        # print()
 
 print(dict_of_variants)
 print()
