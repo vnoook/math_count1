@@ -1,6 +1,10 @@
+# начальные данные 10-тизначных чисел
 x = 1_000_000_000
 y = 9_999_999_999
 y = 1_040_000_021
+
+# словарь в котором буду сохранять количество количество вариантов
+dict_of_variants = {}
 
 for num in range(x, y+1):
     num_in_str = [int(i) for i in str(num)]
@@ -16,6 +20,7 @@ for num in range(x, y+1):
         else:
             q_even_odd += 1
             # print(digit, 'нечетное')
+
     print(q_even_digit, 'четных,', q_even_odd, 'нечетных')
     print()
 
